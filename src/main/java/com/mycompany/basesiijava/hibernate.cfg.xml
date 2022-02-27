@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+    
+    	<! - Información básica de la base de datos de conexión de Hibernate->
+    	<property name="connection.username">sa</property>
+    	<property name="connection.password">1234</property>
+    	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    	<property name="connection.url">jdbc:mysql:///hibernate</property>
+
+		 <! - Hibernate configuración básica->
+		 <! - Dialecto de base de datos utilizado por Hibernate->
+		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+	
+		 <! - Si se imprime SQL en tiempo de ejecución->
+    	<property name="show_sql">true</property>
+    
+    	     <! - Si formatear SQL en tiempo de ejecución->
+    	<property name="format_sql">true</property>
+    
+    	     <! - Estrategia para generar tablas de datos->
+    	<property name="hbm2ddl.auto">update</property>
+    	
+    	     <! - Establecer el nivel de aislamiento de transacción de Hibernate->
+    	<property name="connection.isolation">2</property>
+    	
+    	     <! - Después de eliminar el objeto, haga que su OID sea nulo->
+    	<property name="use_identifier_rollback">true</property>
+    	
+    	     <! - Configurar fuente de datos C3P0->
+    	<property name="hibernate.c3p0.max_size">10</property>
+    	<property name="hibernate.c3p0.min_size">5</property>
+    	<property name="c3p0.acquire_increment">2</property>
+    	
+    	<property name="c3p0.idle_test_period">2000</property>
+    	<property name="c3p0.timeout">2000</property>
+    	
+    	<property name="c3p0.max_statements">10</property>
+    	
+    	     <! - Establece el número de registros recuperados de la base de datos cada vez que la Declaración JDBC lee datos->
+    	<property name="hibernate.jdbc.fetch_size">100</property>
+    	
+    	     <! - Establece el tamaño del lote para la eliminación, actualización e inserción de la base de datos->
+    	<property name="jdbc.batch_size">30</property>
+    	
+    	     <! - Requiere un archivo de mapeo de hibernación asociado .hbm.xml->
+    	<mapping resource="com/**/Customer.hbm.xml"/>
+    	<mapping resource="com/**//Order.hbm.xml"/>
+    
+
+    </session-factory>
+
+</hibernate-configuration>

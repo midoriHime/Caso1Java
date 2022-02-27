@@ -49,6 +49,8 @@ public class Query2 extends Thread{
             fin= System.currentTimeMillis();
             //hace al diferencia para tomar el tiempo de duracion
             duracion=fin-inicio;
+            
+            
             //Variable que almacena los resultados a imprimir en pantalla
             //esto para evitar que se sobrepongan los datos de los otros hilos
             String salida;

@@ -43,6 +43,7 @@ public class Query2 extends Thread{
             //toma el tiempo de inicio de proceso
             inicio= System.currentTimeMillis();
             //realiza llamada a AD para ejecutar la consulta
+            
             ResultSet res = conexion.query2();
             //toma el tiempo final de ejecucion de consulta
             fin= System.currentTimeMillis();

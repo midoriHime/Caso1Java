@@ -20,7 +20,7 @@ public class Consultas {
      * como un resultset
      * Parametros: Nombre del canton a consultar
     */
-    public  ResultSet query1(String canton)
+/*    public  ResultSet query1(String canton)
     {
         Connection conn = null;
         ConexionPool pool = new ConexionPool(1);
@@ -79,6 +79,6 @@ public class Consultas {
 
    }
       
-      
+      */
     
 }

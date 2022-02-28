@@ -32,7 +32,7 @@ public class LNPrincipal {
             System.out.println(e.getMessage());
         }
     }
-    
+   /* 
     public static void query2()
     {
        try
@@ -53,6 +53,6 @@ public class LNPrincipal {
         {
             System.out.println(e.getMessage());
         }  
-    }
+    }*/
     
 }

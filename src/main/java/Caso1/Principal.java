@@ -57,8 +57,8 @@ public class Principal {
     try
     {
         //HACER LLAMADA A QUERY 1 USANDO 10 HILOS
-        query1();
-       // query2();
+       // query1();
+        query2();
        
         
     }

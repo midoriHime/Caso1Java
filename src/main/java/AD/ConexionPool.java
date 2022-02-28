@@ -177,7 +177,39 @@ public class ConexionPool {
 		}
 	}
 	
-     
+     public ResultSet query2()
+       {
+
+         //Crea el string de ejecucion de procedimiento con el canton especificado
+       String sql = "DECLARE @TOTAL INT " 
+                   +"SELECT @TOTAL = COUNT(ID_PARTIDO) FROM PARTIDO "
+                   +"SELECT  B.NOMBRE AS CANTON,"
+                   +"COUNT(A.ID_CANTON)AS ENTREGABLES "
+                   +"FROM ENTREGABLE A"
+                   +"     INNER JOIN"
+                   +"     CANTON B ON A.ID_CANTON = B.ID_CANTON "
+                   +"GROUP BY B.NOMBRE "
+                   +"HAVING @TOTAL * 0.25 >= COUNT(DISTINCT A.ID_PARTIDO) "
+                   +"ORDER BY 1,2";
+
+       ResultSet resultSet = null;
+       Connection conn = null;
+      ConexionPool pool = new ConexionPool(this.maxPoolSize);
+       try
+       {
+           conn = pool.getConnection();
+           Statement statement = conn.createStatement();
+           resultSet = statement.executeQuery(sql);
+           pool.liberaConexion(conn);
+           return resultSet;
+       }                
+       catch (SQLException e) {
+           System.out.println(e.getMessage());
+           return null;
+       }       
+
+
+   }
         
       
 

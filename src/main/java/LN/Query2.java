@@ -22,12 +22,12 @@ public class Query2 extends Thread{
      AD.ConexionPool conexion;
     
     // Constructor de clase que recibe el nombre dado al hilo
-    public Query2(String nombre, ref ConexionPool conn)
+    public Query2(String nombre)
     {
         //asigna el nombre a su extencion
        super(nombre);
        //crea la conexion al la capa AD con la cantidad de POOL  de conexiones
-       conexion = conn;      
+       conexion = new AD.ConexionPool(3);      
        
     }
     /*
@@ -56,8 +56,9 @@ public class Query2 extends Thread{
                     +"Tiempo: "+Long.toString(duracion);
             //recorre el resulset para listar los resultados
             while (res.next()) {
-                    String canton = res.getString(0);
-                    String entregable = res.getString(1);
+
+                    String canton = res.getString(1);
+                    String entregable = res.getString(2);
                     salida = salida+"\n" + canton+"\t"+entregable;
             }	
             //imprime en pantalla
@@ -69,5 +70,6 @@ public class Query2 extends Thread{
         }
 		
     }
+    
     
 }

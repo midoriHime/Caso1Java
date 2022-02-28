@@ -22,12 +22,12 @@ public class Query2 extends Thread{
      AD.ConexionPool conexion;
     
     // Constructor de clase que recibe el nombre dado al hilo
-    public Query2(String nombre)
+    public Query2(String nombre, ref ConexionPool conn)
     {
         //asigna el nombre a su extencion
        super(nombre);
        //crea la conexion al la capa AD con la cantidad de POOL  de conexiones
-       conexion = new ConexionPool(2);      
+       conexion = conn;      
        
     }
     /*

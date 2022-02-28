@@ -37,9 +37,10 @@ public class LNPrincipal {
     {
        try
         {
+            AD.ConexionPool conn= new AD.ConexionPool(2);
             Thread[] hilosCreados = new Thread[10];
             for (int i = 0; i < 10; i++) {
-                LN.Query2 hilo = new LN.Query2("Hilo "+ Integer.toString(i));                   
+                LN.Query2 hilo = new LN.Query2("Hilo "+ Integer.toString(i),conn);                   
                 hilosCreados[i] = hilo;
             }  
 

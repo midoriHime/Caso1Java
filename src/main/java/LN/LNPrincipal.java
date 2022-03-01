@@ -32,7 +32,7 @@ public class LNPrincipal {
             System.out.println(e.getMessage());
         }
     }
-   /* 
+    
     public static void query2()
     {
        try
@@ -40,7 +40,7 @@ public class LNPrincipal {
             AD.ConexionPool conn= new AD.ConexionPool(2);
             Thread[] hilosCreados = new Thread[10];
             for (int i = 0; i < 10; i++) {
-                LN.Query2 hilo = new LN.Query2("Hilo "+ Integer.toString(i),conn);                   
+                LN.Query2 hilo = new LN.Query2("Hilo "+ Integer.toString(i));                   
                 hilosCreados[i] = hilo;
             }  
 
@@ -53,6 +53,6 @@ public class LNPrincipal {
         {
             System.out.println(e.getMessage());
         }  
-    }*/
+    }
     
 }

@@ -58,8 +58,8 @@ public class Principal {
     {
         //HACER LLAMADA A QUERY 1 USANDO 10 HILOS
        // query1();
-        query2();
-       
+        //query2();
+        AD.ConnectionPool.prueba();
         
     }
     catch(Exception e)
